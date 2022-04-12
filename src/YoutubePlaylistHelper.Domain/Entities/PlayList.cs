@@ -1,4 +1,6 @@
-﻿namespace YoutubePlaylistHelper.Domain.Entities
+﻿using YoutubePlaylistHelper.Domain.Enums;
+
+namespace YoutubePlaylistHelper.Domain.Entities
 {
     public class PlayList : Entity
     {
@@ -6,7 +8,7 @@
         {
         }
 
-        public PlayList(string name, User user, string status) : this()
+        public PlayList(string name, User user, Status status) : this()
         {
             Name = name;
             User = user;
@@ -15,6 +17,6 @@
 
         public string Name { get; private set; }
         public User User { get; private set; }
-        public string Status { get; private set; }
+        public Status Status { get; private set; }
     }
 }

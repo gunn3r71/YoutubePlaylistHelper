@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using YoutubePlaylistHelper.Domain.Enums;
 
 namespace YoutubePlaylistHelper.Domain.Entities
 {
@@ -6,13 +7,13 @@ namespace YoutubePlaylistHelper.Domain.Entities
     {
         protected Video()
         {
-            Tags = new List<string>();
         }
 
-        public Video(string title, string description, Channel channel, PlayList playList, int playListOrder, string youtubeVideoId, User indicatorUser, string status) : this()
+        public Video(string title, string description, Channel channel, PlayList playList, int playListOrder, string youtubeVideoId, User indicatorUser, Status status, List<string> tags) : this()
         {
             Title = title;
             Description = description;
+            Tags = tags;
             Channel = channel;
             PlayList = playList;
             PlayListOrder = playListOrder;
@@ -29,6 +30,6 @@ namespace YoutubePlaylistHelper.Domain.Entities
         public int PlayListOrder { get; private set; }
         public string YoutubeVideoId { get; private set; }
         public User IndicatorUser { get; private set; }
-        public string Status { get; private set; }
+        public Status Status { get; private set; }
     }
 }
